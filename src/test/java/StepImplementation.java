@@ -121,7 +121,7 @@ public class StepImplementation {
        // }
     }
 
-    @Step("Navigate to Google")
+    @Step("Navigate to application")
     public void navigatetogoogle()
     {
 
