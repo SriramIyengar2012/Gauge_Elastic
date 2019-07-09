@@ -35,8 +35,8 @@ public class LoggingResult {
 
         // setting test outcome result
         logMap.put("result", result);
-        logMap.put("sprint", "Sprint 1");
-        logMap.put("TestType", "Regression");
+        logMap.put("sprint", "Sprint 3");
+        logMap.put("TestType", "UI");
 
         // time-related values
         logMap.put("timestamp", df.format(endDate));

@@ -28,6 +28,7 @@ public class StepImplementation {
 
 
 
+/*
     @BeforeSuite
     public void getBrowser() throws Exception
     {
@@ -51,6 +52,30 @@ public class StepImplementation {
             DesiredCapabilities capabilities = new DesiredCapabilities().firefox();
             capabilities.setCapability("version", "");
             capabilities.setPlatform(Platform.LINUX);
+
+        }
+
+    }
+*/
+
+    @BeforeSuite
+    public void getBrowser() throws Exception {
+        if (System.getenv("browser").equals("chrome")) {
+            DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
+            capabilities.setCapability("version", "");
+            capabilities.setPlatform(Platform.LINUX);
+
+            driver = new RemoteWebDriver(new URL("http://grid:24444/wd/hub"), capabilities);
+            driver.manage().window().maximize();
+
+        }
+        if (System.getenv("browser").equals("firefox")) {
+            DesiredCapabilities capabilities = new DesiredCapabilities().firefox();
+            capabilities.setCapability("version", "");
+            capabilities.setPlatform(Platform.LINUX);
+
+            driver = new RemoteWebDriver(new URL("http://grid:24444/wd/hub"), capabilities);
+            driver.manage().window().maximize();
 
         }
 
